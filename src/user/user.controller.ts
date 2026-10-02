@@ -7,7 +7,10 @@ import {
   ParseIntPipe,
   Patch,
   Post,
+  UseGuards,
 } from '@nestjs/common';
+import { ApiBearerAuth } from '@nestjs/swagger'; 
+import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard'; 
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { UserService } from './user.service';
@@ -22,6 +25,8 @@ export class UserController {
   }
 
   @Get()
+  @UseGuards(JwtAuthGuard) 
+  @ApiBearerAuth() 
   findAll() {
     return this.userService.findAll();
   }
