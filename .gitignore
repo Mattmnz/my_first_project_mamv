@@ -57,3 +57,23 @@ pids
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Claude Code: permisos aprobados en esta máquina
+.claude/settings.local.json
+
+# Claude Code: permisos aprobados en esta máquina
+.claude/settings.local.json
+CLAUDE.md
+/src/generated/prisma
+
+# Prisma: cliente generado
+src/generated/
+
+# Skills de agentes instaladas por prisma init
+.claude/skills/
+.windsurf/
+.agents/
+skills-lock.json
+
+# Base SQLite local
+dev.db*
